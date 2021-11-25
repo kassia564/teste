@@ -1,0 +1,2953 @@
+
+<doctype html>
+<!--[if IE 9]> <html class="ie9 no-js" lang=""> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+  
+  <script>
+  window.CartX = window.CartX || {};
+     window.themeString = {
+      moneyFormat: 'R$ {{amount}}',
+      shopCurrency : 'BRL'
+    };
+  
+  CartX.Currency = {
+        formatMoney: function (e, t) {
+            "string" == typeof e && (e = e.replace(".", ""));
+            var i = "",
+                a = /\{\{\s*(\w+)\s*\}\}/,
+                s = t || "$";
+            function n(e, t, i, a) {
+                if (((i = i || ","), (a = a || "."), isNaN(e) || null === e)) return 0;
+                var s = (e = (e / 100).toFixed(t)).split(".");
+                return s[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + i) + (s[1] ? a + s[1] : "");
+            }
+            switch (s.match(a)[1]) {
+                case "amount":
+                    i = n(e, 2);
+                    break;
+                case "amount_no_decimals":
+                    i = n(e, 0);
+                    break;
+                case "amount_with_comma_separator":
+                    i = n(e, 2, ".", ",");
+                    break;
+                case "amount_no_decimals_with_comma_separator":
+                    i = n(e, 0, ".", ",");
+                    break;
+                case "amount_no_decimals_with_space_separator":
+                    i = n(e, 0, " ");
+                    break;
+                case "amount_with_apostrophe_separator":
+                    i = n(e, 2, "'");
+            }
+            return s.replace(a, i);
+        },
+    };
+</script>
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2879FE">
+  <meta name="keywords" content="Cartx Template" />
+  <meta name="author" content="p-themes">
+  <link rel="canonical" href="">
+  <meta name="csrf-token" content="cSzEk5wQysGazzgb1bLzQiqYPMsU3SndoCaBRysY"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+  <!-- Title and description ================================================== -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+  GLOWSTORE
+</title>
+
+<meta name="description" content="" />
+
+  
+
+  <!-- Social meta ================================================== --><!-- /snippets/social-meta-tags.liquid -->
+
+
+
+
+
+
+<meta property="og:site_name" content="GLOWSTORE">
+<meta property="og:url" content="">
+<meta property="og:title" content="GLOWSTORE">
+<meta property="og:type" content="website">
+<meta property="og:description" content="GLOWSTORE">
+
+
+
+
+
+  <meta name="twitter:site" content="@">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GLOWSTORE">
+<meta name="twitter:description" content="GLOWSTORE">
+
+
+  <!-- Helpers ================================================== -->
+
+  <!-- CSS ================================================== --><link href="https://fonts.googleapis.com/css?family=baskerville:100,200,300,400,500,600,700,800,900" rel="stylesheet" defer><link href="https://fonts.googleapis.com/css?family=Hind:100,200,300,400,500,600,700,800,900" rel="stylesheet" defer><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"><style>
+@font-face {
+  font-family: 'wokiee_icons';
+  src:  url("//glowstore.oncartx.io/themes/void/assets/wokiee_icons.eot");
+  src:  url("//glowstore.oncartx.io/themes/void/assets/wokiee_icons.eot") format('embedded-opentype'),
+    url("//glowstore.oncartx.io/themes/void/assets/wokiee_icons.ttf") format('truetype'),
+    url("//glowstore.oncartx.io/themes/void/assets/wokiee_icons.woff") format('woff'),
+    url("//glowstore.oncartx.io/themes/void/assets/wokiee_icons.svg#wokiee_icons") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'revicons';
+  src: url("//glowstore.oncartx.io/themes/void/assets/revicons.eot");
+  src: url("//glowstore.oncartx.io/themes/void/assets/revicons.eot") format("embedded-opentype"), url("//glowstore.oncartx.io/themes/void/assets/revicons.woff") format("woff"), url("//glowstore.oncartx.io/themes/void/assets/revicons.ttf") format("truetype"), url("//glowstore.oncartx.io/themes/void/assets/revicons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+</style>
+
+<link href='//glowstore.oncartx.io/themes/void/247866/0/140910/compiled/theme' type='text/css' rel='stylesheet' >
+
+<style>
+.cartx-section.index-section .container-indent {
+    padding: 30px 0;
+}
+.nomargin, #tt-pageContent .nomargin {
+    padding-top: 0;
+}
+</style>
+  <script src="//glowstore.oncartx.io/themes/void/247866/140910/jquery.min.js"></script><!-- Header hook for plugins ================================================== -->
+  <script>window.slug='glowstore'</script>
+    <script>
+        var onCartx = new Object();
+        onCartx.oncartx_domain = 'glowstore';
+        (function() {
+          function asyncLoad() {
+            var urls = ["https:\/\/whatsapp.cartx.io\/oncartx.js?v=619efc9c35902","\/js\/analytics.min.js","\/js\/services\/socket-client.js?v=619efc9c35904"];
+            for (var i = 0; i < urls.length; i++) {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = urls[i];
+              var x = document.getElementsByTagName('script')[0];
+              x.parentNode.insertBefore(s, x);
+            }
+          };
+          if(window.attachEvent) {
+            window.attachEvent('onload', asyncLoad);
+          } else {
+            window.addEventListener('load', asyncLoad, false);
+          }
+        })();</script>
+  <!-- /Header hook for plugins ================================================== -->
+
+  
+  
+   <script>
+    //Additional Storefront Script Starts
+    
+      var script = {"id":959213,"shop_id":140910,"type":"storefront","head_script":"","body_script":"","meta_script":"","created_at":"2021-11-22 05:37:01","updated_at":"2021-11-22 05:37:01"};
+      if(script.head_script) {
+        $("head").append(script.head_script);
+      }
+      if (script.body_script) {
+        setTimeout(function() {
+          $("body").append(script.body_script);
+        }, 1000)
+      }
+    
+    //Additional Storefront Script Ends
+</script>
+  
+
+  
+  <script type="text/javascript">
+    var fb_pixel_option = 'default';
+  </script>
+
+  
+    <!-- Facebook Pixel Code -->
+    <script>
+
+        var pageview_eventID = '52903f0d-99e6-47ea-9d68-b859f824219b';
+        var initiatecheckout_eventID = '901a05e0-c597-4f14-abce-d90ecfebbf69';
+        var addpaymentinfo_eventID = '0c48c47d-cf0f-4d8f-ad81-0147b9436e0a';
+        var purchase_eventID = 'b360431c-aa8d-4ad1-82b6-4060640992d8';
+        var purchase_boleto_eventID = 'b574dafb-4bc8-4bc2-94e1-c76d56502603';
+        var purchase_pix_eventID = '40cdc82b-fb27-4f1e-a11a-b1e65d1923f8';
+        var purchase_cc_eventID = 'aec870b2-1f7f-4467-b3a3-e4dd0e0376a3';
+        var viewcontent_eventID = 'a31e2343-4da3-4796-835d-8401d160b593';
+        var addtocart_eventID = '4c7e298e-8338-4b88-b1cf-27786580f155';
+        var random_eventID = '1d0ea018-7071-490d-9322-23c401311937';
+        var facebook_extern_id = 'MjAwLjE3My4xNzYuMTE0';
+        var fb_pixel_option = 'default';
+
+        console.log('Checking facebook pixels');
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+
+
+        
+        var customerFb = {};
+        
+
+        
+        fbq('init', '', customerFb);
+        
+
+        if (typeof pageview_eventID !== 'undefined' && pageview_eventID !== '' && pageview_eventID !== null) {
+            fbq('track', 'PageView', {}, { eventID: pageview_eventID});
+        }
+
+        if (typeof fb_pixel_option != 'undefined' && fb_pixel_option === 'api') {
+            $(document).ready(function() {
+                setTimeout(function () {
+                    if (typeof fbPixelAPI !== 'undefined') {
+                        if (typeof pageview_eventID !== 'undefined' && pageview_eventID !== '' && pageview_eventID !== null) {
+                            fbPixelAPI('PageView', [], pageview_eventID, customerFb ? customerFb : {});
+                        }
+                    }
+                }, 1000);
+            });
+        }
+    </script>
+    <!-- End Facebook Pixel Code -->
+
+
+
+  
+  <style>
+    #cartx-section-categorie-button{
+      display: none;
+    }
+    #tt-pageContent .cartx-section > .container-indent:not(.nomargin):not([class^="tt-offset"]){
+      margin-top: 52px;
+    }
+    @media (max-width: 1024px){
+      #tt-pageContent .cartx-section > .container-indent:not(.nomargin):not([class^="tt-offset"]){
+        margin-top: 43px;
+      }
+    }
+    @media (max-width: 575px){
+      #tt-pageContent .cartx-section > .container-indent:not(.nomargin):not([class^="tt-offset"]){
+        margin-top: 33px;
+      }
+    }
+    [data-sectionname="index_sectionfeaturedproduct"] .tt-product .tt-options-swatch li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    [data-sectionname="index_sectionfeaturedproduct"] .tt-option-block {
+        margin-bottom: 15px;
+    }
+    [data-sectionname="index_sectionfeaturedproduct"] .tt-options-swatch:not(.options-large):not(.options-middle) li a, .tt-options-swatch:not(.options-large):not(.options-middle) li a.options-color {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    [data-sectionname="index_sectionfeaturedproduct"] .tt-options-swatch:not(.options-large):not(.options-middle) li a.options-color-image {
+        min-width: 60px;
+        min-height: 60px;
+    }
+    #macy-container1 .card {
+        width: calc(50% - 12px);
+        margin-bottom: 20px;
+    }
+    .container-indent.product_tabs #tab_review #macy-container1, .tab-pane #macy-container1 {
+        justify-content: flex-start !important;
+    }
+
+    .container-indent.product_tabs #tab_review #macy-container1 .card, .tab-pane #macy-container1 .card {
+        width: calc(25% - 12px);
+        margin-right: 12px;
+    }
+    .tt-mobile-header-inline .tt-menu-toggle svg path{
+      fill: #FFFFFF;
+    }
+    .tt-mobile-header-inline .tt-menu-toggle:hover svg path{
+      fill: #000000;
+    }
+    .visible-xs, .visible-sm, .visible-md, .visible-lg, .visible-xl {
+        display: none !important;
+    }
+    @media (max-width: 575px){
+      .visible-xs {
+          display: block !important;
+      }
+    }
+  .progress_bar_text, .progress_bar_text #counter_left, .progress_bar_text #counter_left1{
+      color: ;
+    }
+    .infinitybutton.autoscroll_yes {
+        display: none;
+    }
+    
+    #custom-options-element label {
+        font-size: 14px;
+        line-height: 26px;
+        color:#191919;
+        font-family: 'baskerville', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+    }
+    @media (max-width: 1024px){
+      .tt-product .tt-image-box .tt-img-roll-over {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          z-index: 1;
+          width: 100%;
+          -webkit-transition: opacity .3s ease-out;
+          transition: opacity .3s ease-out;
+          display: block !important;
+      }
+      .tt-product .tt-image-box img {
+          width: 100%;
+          height: auto;
+      }
+      .tt-product:hover .tt-image-box .tt-img-roll-over, .tt-product:hover .tt-image-box [class^=tt-img]:last-child {
+          -moz-opacity: 1;
+          -khtml-opacity: 1;
+          -webkit-opacity: 1;
+          opacity: 1;
+      }
+    }
+    @media (max-width: 789px){
+      .tt-shopcart-table-02 table td:nth-child(5) {
+           display: block;
+      }
+      .container-indent.product_tabs #tab_review #macy-container1 .card, .tab-pane #macy-container1 .card {
+          width: calc(50% - 12px);
+          margin-right: 12px;
+      }
+    }
+    @media (max-width: 789px){
+      .pagepage #tt-pageContent img {
+          width: 100%;
+      }
+    }
+    .tt-fixed-product-wrapper .tt-fixed-product .tt-description .tt-price .product-price__price-product-template {
+        display: inline-block;
+        margin-left: 5px;
+    }
+    .tt-fixed-product-wrapper {
+        padding-bottom: 10px;
+    }
+    .tt-search.tt-dropdown-obj:nth-child(2) {
+    display: none;
+}
+.products-nomargin{
+  margin-top: 20px;
+}
+@media (max-width: 520px){
+  .tt-fixed-product-wrapper .tt-input-counter.style-01 {
+      max-width: 70px !important;
+      min-width: 70px;
+  }
+  .tt-fixed-product-wrapper .tt-input-counter.style-01 span {
+      width: 30px;
+  }
+  .tt-fixed-product-wrapper .tt-row-custom01 .col-item:not(:first-child) {
+      margin-left: -15px !important;
+  }
+  .tt-stuck-nav .tt-stuck-parent-categories {
+    display: none;
+  }
+}
+.ttshowmorestyle.disable {
+    display: none;
+}
+#cartx-section-product-template .tt-product-single-info .tt-input-counter.style-01 span{
+  color: #d8d8d8;
+}
+/*.pagecollection #custom-preloader {
+    opacity: 0 !important;
+}*/
+@media (max-width: 507px){
+  #modalVideoProduct .modal-video {
+    width: 95%;
+  }
+  .modal-video-content iframe {
+      height: 35vh;
+  }
+}
+@media (max-width: 420px){
+  .tt-img-box {
+      height: auto;
+  }
+}
+@media (min-width: 790px){
+  footer .tt-logo .tt-title{
+    color: #191919;
+  }
+}
+#custom-product-item .slick-arrow:before, .tt-mobile-product-slider.arrow-location-center .slick-arrow:before{
+  color: #191919;
+}
+#cartx-section-product-template .modal .modal-body {
+    overflow: auto;
+}
+@media (max-width: 790px){
+  #cartx-section-product-template .modal .modal-body img {
+      width: 100%;
+      height: auto;
+  }
+}
+.save_discount_pro {
+    border: 2px solid;
+    line-height: 1;
+    padding: 5px 5px 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #000000;
+}
+.product_tabs .tt-collapse-content img {
+    height: auto;
+}
+.fr-emoticon.fr-emoticon-img {
+    background-repeat: no-repeat !important;
+    font-size: inherit;
+    height: 1em;
+    width: 1em;
+    min-height: 20px;
+    min-width: 20px;
+    display: inline-block;
+    margin: -.1em .1em .1em;
+    line-height: 1;
+    vertical-align: middle;
+}
+.tp-bannertimer{
+  background: url("//glowstore.oncartx.io/themes/void/assets/timer.png");
+}
+  </style>
+  <script>
+  var visitorcountr = false;
+  var direct_checkout= true;
+  </script>
+</head>
+<body class="pageindex" ><div id='cartx-section-header' class='cartx-section '><style type="text/css">.tt-desktop-header .tt-obj-options {
+    display: -ms-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+.tt-desktop-header .tt-obj-options > * {
+    margin-left: 19px;
+}
+.tt-desktop-header .header-tel-info {
+    font-weight: 300;
+    line-height: 15px;
+    font-size: 14px;
+    text-align: right;
+    display: inline-block;
+    color: #FFFFFF;
+}
+.tt-desktop-header .header-tel-info .title {
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 18px;
+}
+.tt-desktop-header .header-tel-info p {
+    margin: 0;
+}
+
+.tt-search-opened-headtype1 .tt-search-input{
+    padding: 10px 10px 6px 34px;
+    width: 260px;
+}
+</style>
+<header class="desctop-menu-large small-header tt-hover-03"><nav class="panel-menu mobile-main-menu">
+  <ul><li>
+      <a href="/">Home</a></li><li>
+      <a href="collections/all">Catalog</a></li></ul>
+</nav><!-- tt-mobile-header -->
+<div class="tt-mobile-header">
+  <div class="container-fluid">
+    <div class="tt-header-row">
+      <div class="tt-mobile-parent-menu">
+        <div class="tt-menu-toggle mainmenumob-js">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">
+  <g>
+    <path d="M1.8,6.1C1.6,6,1.6,5.8,1.6,5.7c0-0.2,0.1-0.3,0.2-0.4C1.9,5.1,2,5,2.2,5h17.5c0.2,0,0.3,0.1,0.4,0.2
+             c0.1,0.1,0.2,0.3,0.2,0.4c0,0.2-0.1,0.3-0.2,0.4c-0.1,0.1-0.3,0.2-0.4,0.2H2.2C2,6.3,1.9,6.2,1.8,6.1z M1.8,11.7
+             c-0.1-0.1-0.2-0.3-0.2-0.4c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.3-0.2,0.4-0.2h17.5c0.2,0,0.3,0.1,0.4,0.2c0.1,0.1,0.2,0.3,0.2,0.4
+             c0,0.2-0.1,0.3-0.2,0.4c-0.1,0.1-0.3,0.2-0.4,0.2H2.2C2,11.9,1.9,11.8,1.8,11.7z M1.8,17.3c-0.1-0.1-0.2-0.3-0.2-0.4
+             c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.3-0.2,0.4-0.2h17.5c0.2,0,0.3,0.1,0.4,0.2c0.1,0.1,0.2,0.3,0.2,0.4c0,0.2-0.1,0.3-0.2,0.4
+             c-0.1,0.1-0.3,0.2-0.4,0.2H2.2C2,17.5,1.9,17.5,1.8,17.3z"/>
+  </g>
+</svg>
+        </div>
+      </div>
+      <!-- search -->
+      <div class="tt-mobile-parent-search tt-parent-box"></div>
+      <!-- /search --><!-- cart -->
+      <div class="tt-mobile-parent-cart tt-parent-box"></div>
+      <!-- /cart --></div>
+  </div>
+  <div class="container-fluid tt-top-line">
+    <div class="row">
+      <div class="tt-logo-container">
+        <a class="tt-logo tt-logo-alignment" href="/"><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4694436712.png?auto=compress,format&w=256&h=0"
+                           srcset="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4694436712.png?auto=compress,format&w=256&h=0 1x, https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4694436712.png?auto=compress,format&w=512&h=0 2x"
+                           alt=""
+                           class="tt-retina"></a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+  <!-- tt-desktop-header -->
+  <div class="tt-desktop-header">
+
+    <div class="container-fluid">
+      <div class="tt-header-holder">
+
+        <div class="tt-obj-logo obj-aligment-center" itemscope itemtype="http://schema.org/Organization"><a href="/" class="tt-logo" itemprop="url"><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4436917602.png?auto=compress,format&w=450&h=0"
+     srcset="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4436917602.png?auto=compress,format&w=450&h=0 1x, https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4436917602.png?auto=compress,format&w=900&h=0 2x"
+     alt=""
+     class="tt-retina" itemprop="logo" style="top:100px"/></a>
+        </div><div class="tt-obj-options obj-move-right tt-position-absolute"><span class="header-tel-info">
+              
+            </span><div class="tt-parent-box tt-desctop-parent-headtype1">
+  <div class="tt-search-opened-headtype1 headerformplaceholderstyles">
+    <form action="/search" method="get" role="search">
+      <button type="submit" class="tt-btn-search">
+        <i class="icon-f-85"></i>
+      </button>
+      <input class="tt-search-input"
+             type="search"
+             name="q"
+             placeholder="PROCURAR PRODUTOS...">
+      <input type="hidden" name="type" value="product" />
+    </form>
+  </div>
+</div><!-- tt-search -->
+<div class="tt-desctop-parent-search tt-parent-box serchisopen">
+  <div class="tt-search tt-dropdown-obj">
+    <button class="tt-dropdown-toggle"
+            data-tooltip="Pesquisar"
+            data-tposition="bottom"
+            >
+      <i class="icon-f-85"></i>
+    </button>
+    <div class="tt-dropdown-menu">
+      <div class="container">
+        <form action="/search" method="get" role="search">
+          <div class="tt-col">
+            <input type="hidden" name="type" value="product" />
+            <input class="tt-search-input"
+                   type="search"
+                   name="q"
+                   placeholder="PROCURAR PRODUTOS..."
+                   aria-label="PROCURAR PRODUTOS...">
+            <button type="submit" class="tt-btn-search"></button>
+          </div>
+          <div class="tt-col">
+            <button class="tt-btn-close icon-f-84"></button>
+          </div>
+          <div class="tt-info-text">O que você está procurando?</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /tt-search --><!-- tt-cart -->
+<div class="tt-desctop-parent-cart tt-parent-box">
+  <div class="tt-cart tt-dropdown-obj">
+    <a href="/cart">
+    <button class="tt-dropdown-toggle header-icon-with-text"
+            data-tooltip="Carrinho"
+            data-tposition="bottom"
+            >
+      
+      <span class="tt-icon">
+        <svg width="28" height="30" viewbox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.45012 21C4.45012 21.8281 4.73598 22.5312 5.30769 23.1094C5.89486 23.7031 6.59792 24 7.41686 24C8.23581 24 8.93114 23.7031 9.50286 23.1094C10.09 22.5312 10.3836 21.8281 10.3836 21C10.3836 20.1719 10.09 19.4688 9.50286 18.8906C8.93114 18.2969 8.23581 18 7.41686 18C6.59792 18 5.89486 18.2969 5.30769 18.8906C4.73598 19.4688 4.45012 20.1719 4.45012 21ZM8.90024 21C8.90024 21.4062 8.75344 21.7578 8.45986 22.0547C8.16628 22.3516 7.81861 22.5 7.41686 22.5C7.01512 22.5 6.66745 22.3516 6.37387 22.0547C6.08028 21.7578 5.93349 21.4062 5.93349 21C5.93349 20.5938 6.08028 20.2422 6.37387 19.9453C6.66745 19.6484 7.01512 19.5 7.41686 19.5C7.81861 19.5 8.16628 19.6484 8.45986 19.9453C8.75344 20.2422 8.90024 20.5938 8.90024 21ZM20.0255 18C19.2066 18 18.5035 18.2969 17.9164 18.8906C17.3446 19.4688 17.0588 20.1719 17.0588 21C17.0588 21.8281 17.3446 22.5312 17.9164 23.1094C18.5035 23.7031 19.2066 24 20.0255 24C20.8445 24 21.5398 23.7031 22.1115 23.1094C22.6987 22.5312 22.9923 21.8281 22.9923 21C22.9923 20.1719 22.6987 19.4688 22.1115 18.8906C21.5398 18.2969 20.8445 18 20.0255 18ZM20.0255 22.5C19.6238 22.5 19.2761 22.3516 18.9825 22.0547C18.6889 21.7578 18.5422 21.4062 18.5422 21C18.5422 20.5938 18.6889 20.2422 18.9825 19.9453C19.2761 19.6484 19.6238 19.5 20.0255 19.5C20.4273 19.5 20.7749 19.6484 21.0685 19.9453C21.3621 20.2422 21.5089 20.5938 21.5089 21C21.5089 21.4062 21.3621 21.7578 21.0685 22.0547C20.7749 22.3516 20.4273 22.5 20.0255 22.5ZM0.741686 1.5H3.05946L5.1918 15.8672C5.22271 16.0391 5.30769 16.1875 5.44676 16.3125C5.58582 16.4375 5.74807 16.5 5.93349 16.5H20.7672C20.9526 16.5 21.1149 16.4375 21.2539 16.3125C21.393 16.1875 21.478 16.0312 21.5089 15.8438L22.9923 4.59375C23.0077 4.48438 23 4.38281 22.9691 4.28906C22.9382 4.17969 22.8841 4.08594 22.8069 4.00781C22.745 3.92969 22.6601 3.86719 22.5519 3.82031C22.4592 3.77344 22.3588 3.75 22.2506 3.75H4.91367L4.45012 0.632812C4.41921 0.460938 4.33423 0.3125 4.19516 0.1875C4.0561 0.0625 3.89385 0 3.70843 0H0.741686C0.540813 0 0.363117 0.078125 0.208599 0.234375C0.0695331 0.375 0 0.546875 0 0.75C0 0.953125 0.0695331 1.13281 0.208599 1.28906C0.363117 1.42969 0.540813 1.5 0.741686 1.5Z" fill="#EC3727"></path>
+</svg>
+      </span>
+      
+
+      <span class="tt-text">
+      
+      </span>
+      <span class="tt-badge-cart">1</span>
+    </button>
+</a>
+
+  </div>
+</div>
+<!-- /tt-cart --></div>
+
+      </div>
+    </div><div class="tt-color-scheme-01 menubackground"><div class="container-fluid single-menu">
+        <div class="tt-header-holder">
+          <div class="tt-obj-menu obj-aligment-center">
+            <div class="tt-desctop-parent-menu tt-parent-box">
+              <div class="tt-desctop-menu tt-hover-02"><nav>
+  <ul>
+    <li class="dropdown tt-megamenu-col-01" >
+      <a href="/"><span>Home</span></a></li><li class="dropdown tt-megamenu-col-01" >
+      <a href="collections/all"><span>Catalog</span></a></li></ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+  <!-- stuck nav -->
+  <div class="tt-stuck-nav">
+    <div class="container-fluid">
+      <div class="tt-header-row "><div class="tt-stuck-parent-logo">
+          <a href="/" class="tt-logo" itemprop="url"><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4436917602.png?auto=compress,format&w=300&h=0"
+               srcset="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4436917602.png?auto=compress,format&w=300&h=0 1x, https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4436917602.png?auto=compress,format&w=600&h=0 2x"
+               alt=""
+               class="tt-retina" itemprop="logo"/></a>
+        </div><div class="tt-stuck-parent-menu"></div>
+        <div class="tt-stuck-parent-search tt-parent-box"></div><div class="tt-stuck-parent-cart tt-parent-box"></div></div>
+    </div></div>
+</header>
+
+
+</div>
+  <div id="tt-pageContent" class="show_unavailable_variants">
+    <div id='cartx-section-1611060716407' class='cartx-section index-section'><div class="nomargin container-indent" data-sectionname="index_revolution">
+  <div class="container-fluid">
+    <div class="row ">
+      
+      <div class="slider-revolution revolution-default" data-speed="5000">
+        <div class="tp-banner-container">
+          <div class="tp-banner revolution" style="display: none;">
+            <ul><li data-slideitem="16110607164071" data-thumb="https://imgix.cartpanda.com/static/theme_images/78/a5/de/39208_1615712118.png?auto=compress,format&w=1920&h=0" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide"><img src="//glowstore.oncartx.io/themes/void/assets/dummy.png" data-lazyload="https://imgix.cartpanda.com/static/theme_images/78/a5/de/39208_1615712118.png?auto=compress,format&w=1920&h=0" alt="" data-bgposition="left " data-bgfit="cover" data-bgrepeat="no-repeat" ><div class="tp-caption tp-caption1 lfb stb text- textsdescription"
+                     
+                     data-x=""
+                     data-y=""
+                     data-hoffset="0"
+                     data-voffset=""
+                     data-speed="600"
+                     data-start="900"
+                     data-easing="Power4.easeOut"
+                     data-endeasing="Power4.easeIn">
+                  
+                  
+                  
+                  </div></li><li data-slideitem="16110607164072" data-thumb="https://imgix.cartpanda.com/static/theme_images/78/a5/de/39208_0111162168.png?auto=compress,format&w=1920&h=0" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide"><img src="//glowstore.oncartx.io/themes/void/assets/dummy.png" data-lazyload="https://imgix.cartpanda.com/static/theme_images/78/a5/de/39208_0111162168.png?auto=compress,format&w=1920&h=0" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" ></li></ul>
+          </div>
+        </div>
+      </div></div>
+  </div>
+</div></div><div id='cartx-section-1611061432580' class='cartx-section index-section'><div class="tt-offset-small container-indent">
+  <div class="container" data-sectionname="index_brands"><div class="row tt-carousel-brands arrow-location-center-02 tt-arrow-hover slick-animated-show-js" data-slick='{"slidesToShow": 6, "slidesToScroll": 2, "autoplay": , "autoplaySpeed": 7000}'><div >
+        <a href=""><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_1631417646.png?auto=compress,format&w=1024&h=1024" alt="">
+        </a>
+      </div><div >
+        <a href=""><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_7174735163.png?auto=compress,format&w=1024&h=1024" alt="">
+        </a>
+      </div><div >
+        <a href=""><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_6111046673.png?auto=compress,format&w=1024&h=1024" alt="">
+        </a>
+      </div><div >
+        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fpt%2Fpng-zkiue&psig=AOvVaw3gJl5gJAHRqSyGOziHxHO6&ust=1637690899749000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNCm5Z7IrPQCFQAAAAAdAAAAABAE"><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_1376512764.png?auto=compress,format&w=1024&h=1024" alt="">
+        </a>
+      </div><div >
+        <a href="https://www.google.com/search?q=logo+marca+polo&sxsrf=AOaemvJPXHfwqweMLiO8u2U1wB6D2dQspg:1637604751586&tbm=isch&source=iu&ictx=1&fir=T3u-Hp1enVDwaM%252CWjR6REfoF3dx7M%252C_%253BF-_Aw6Xiz828AM%252CdIIG2Mn0kEoq5M%252C_%253BMrEqiV-WGUBf7M%252CPZfvQkkI_FhmhM%252C_%253B3UDtnfrpVBWfIM%252CuDY1VogW5BzgaM%252C_%253BFT66GBQG_phEuM%252CPZfvQkkI_FhmhM%252C_%253B8Z7joLSwgwQkiM%252Cv_zRfrCDYOW_5M%252C_%253Bs73uaqnHw_s26M%252Ccyd6-cq3Npr08M%252C_%253BUzEkLDAvZ9sh6M%252CWjR6REfoF3dx7M%252C_%253BlA_s68dPZL7aFM%252CHC4K6kCcUa8G9M%252C_%253Bz-1Vby-z_CZIFM%252Cv-eUCSBMFSwfjM%252C_%253BqO88LWMBsD1G_M%252Ccyd6-cq3Npr08M%252C_%253BzjUbMJwbLN9kwM%252Ccyd6-cq3Npr08M%252C_%253BvglhT3hdoRMHCM%252CPZfvQkkI_FhmhM%252C_%253BBonla2uD6eZghM%252CQZ3rJjcH3cdBeM%252C_&vet=1&usg=AI4_-kQey9woE-LQO8opWxJRXtur8IACyA&sa=X&ved=2ahUKEwiNlICMyaz0AhUJJrkGHfGEDIIQ9QF6BAgZEAE#imgrc=F-_Aw6Xiz828AM"><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_1367319146.png?auto=compress,format&w=1024&h=1024" alt="">
+        </a>
+      </div><div >
+        <a href=""><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4170966936.png?auto=compress,format&w=1024&h=1024" alt="">
+        </a>
+      </div><div >
+        <a href=""><img src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_7176335016.jpg?auto=compress,format&w=1024&h=1024" alt="">
+        </a>
+      </div></div></div>
+</div>
+
+
+</div><div id='cartx-section-1637589282335' class='cartx-section index-section'><div class="nomargin container-indent sectionbigbanners1637589282335">
+  <div class="container-fluid">
+    <div class="row no-gutter"><div class="col-sm-12 respimgsize blid0"  id="section16375892823351">
+        
+          <a href="" class="tt-promo-fullwidth">
+            
+        	<img class="lazyload"
+                 data-mainimage="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_4616736617.jpg?auto=compress,format&w=1920&h=0"
+                 alt="">
+                 <div class="tt-description tt-point-h-l">
+            <div class="tt-description-wrapper text-left">
+              
+              
+              
+              
+            </div>
+          </div>
+        
+          </a>
+            
+        
+      </div></div>
+  </div>
+</div>
+<style>@media (min-width: 1024px){
+    div#cartx-section-1637589282335 div.blid0 a.btn {
+      min-height: 50px;
+      font-size: 12px;
+      padding: 0px;
+      height: 12px;
+    }
+  }</style>
+
+
+</div><div id='cartx-section-1611061955709' class='cartx-section index-section'><div class="nomargin products-nomargin container-indent ">
+  
+  <div class="container container-fluid-custom-mobile-padding" data-sectionname="index_sectionproducts"><div class="tt-block-title">
+      <h2 class="tt-title"><a href="/collections/vapers" class="title-hover-underline" title="MOSTRAR TODOS">OS MAIS VENDIDOS</a></h2>
+      
+      
+    </div><div class="tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js" data-slick='{"slidesToShow": 5,"slidesToScroll": 2,"autoplay": 1,"autoplaySpeed": 5000,"responsive": [{"breakpoint": 600,"settings": {"slidesToShow": 2,"slidesToScroll": 1}}]}'><div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/bombina-de-malha-p"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/94/9b/63/1637629016.png?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/94/9b/63/1637629016.png?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/bombina-de-malha-p">Bombina de malha P</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 189,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611061955709">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611061955709 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/renova-zero-care-pod-system-original-vaporesso-leia-a-descricao-antes-de-comprar"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/fe/34/8b/1637629253.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/fe/34/8b/1637629253.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/renova-zero-care-pod-system-original-vaporesso-leia-a-descricao-antes-de-comprar">Renova ZERO CARE Pod System ORIGINAL VAPORESSO (LEIA A DESCRIÇÃO ANTES DE COMPRAR)</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 209,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611061955709">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611061955709 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      </div></div>
+  
+</div>
+<style type="text/css">
+  .tt-layout-product-item .tt-product .svg_admin {
+      height: auto !important;
+  }
+</style>
+
+
+</div><div id='cartx-section-1611062353834' class='cartx-section index-section'><div class="nomargin products-nomargin container-indent ">
+  
+  <div class="container container-fluid-custom-mobile-padding" data-sectionname="index_sectionproducts"><div class="tt-block-title">
+      <h2 class="tt-title"><a href="/collections/" class="title-hover-underline" title="MOSTRAR TODOS">EM ALTA</a></h2>
+      
+      
+    </div><div class="tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js" data-slick='{"slidesToShow": 5,"slidesToScroll": 2,"autoplay": 1,"autoplaySpeed": 5000,"responsive": [{"breakpoint": 600,"settings": {"slidesToShow": 2,"slidesToScroll": 1}}]}'>
+        
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+          <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href=""><span class="tt-img "><div class="svg_admin" style="height: 500px;"><svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg><span>500x500</span><span>Exemplo da imagem do retângulo não é responsivo</span></div></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span><span class="tt-label-our-stock">Esgotado</span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href=""></a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 19,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1611062353834">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1611062353834 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div></div></div>
+  
+</div>
+<style type="text/css">
+  .tt-layout-product-item .tt-product .svg_admin {
+      height: auto !important;
+  }
+</style>
+
+
+</div><div id='cartx-section-1637589665306' class='cartx-section index-section'>
+
+<div class="productandvideosection container-indent "
+     data-sectionname="index_productandvideosection">
+  <div class="container prvidsec1637589665306"><div class="row align-items-center">
+      
+      
+<div class="col-12 col-md-6">
+  <div class="productandvideo-video">
+    
+        
+
+        
+        
+        
+
+        <div class="responsive-iframe">
+          <iframe width="580" height="400" src="https://www.youtube.com/embed/_6f71kJW5BM">
+          </iframe>
+        </div>
+      <div class="productandvideo-video-desc">
+      
+      
+    </div></div>
+</div>
+
+      
+
+<div class="col-6 col-md-3">
+  <a href="/products/case-de-ultimate-cover-a-prova-de-choque-luxuosa-para-iphone-11-12-pro-max" class="productandvideoimg">
+      <img class="lazyload"
+           data-src="https://imgix.cartpanda.com/static/products_images/40/5d/2c/1637452911917.jpeg?auto=compress,format&w=300&h=0"
+           data-srcset="https://imgix.cartpanda.com/static/products_images/40/5d/2c/1637452911917.jpeg?auto=compress,format&w=400&h=0 360w, https://imgix.cartpanda.com/static/products_images/40/5d/2c/1637452911917.jpeg?auto=compress,format&w=600&h=0 540w, https://imgix.cartpanda.com/static/products_images/40/5d/2c/1637452911917.jpeg?auto=compress,format&w=800&h=0 720w, https://imgix.cartpanda.com/static/products_images/40/5d/2c/1637452911917.jpeg?auto=compress,format&w=1024&h=0 1024w"
+           alt=""/>
+  </a>
+</div>
+<div class="col-6 col-md-3">
+  <div class="productandvideothumb"><h2 class="tt-title"><a href="/products/case-de-ultimate-cover-a-prova-de-choque-luxuosa-para-iphone-11-12-pro-max">Case de Ultimate  Cover a prova de choque, luxuosa, para Iphone 11, 12 pro, max,</a></h2><div class="tt-pr-small-desc">
+      Temos outras cores!
+    </div><div class="tt-price"><span>R$ 89,99</span><span class="old-price hide"></span></div><div class="tt-button-box">
+      
+      <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <input type="hidden" value="cSzEk5wQysGazzgb1bLzQiqYPMsU3SndoCaBRysY" name="_token">
+        <input type="hidden" name="id" value="28450864">
+        <button class="tt-btn-addtocart  addtocart-item-js"data-relatedcollection="">
+          
+          
+          <span class="icon icon-shopping_basket"></span> <span>ADICIONAR AO CARRINHO</span>
+          
+          
+        </button>
+      </form>
+      
+    </div>
+    
+    
+    
+  </div>
+</div>
+<script src="//glowstore.oncartx.io/" defer></script>
+
+      
+    </div>
+  </div>
+</div>
+<style>
+  .prvidsec1637589665306 .productandvideothumb .tt-title{
+    font-weight: 500;
+  }
+  .prvidsec1637589665306 .productandvideothumb .tt-price{
+    font-weight: 500;
+  }
+  .prvidsec1637589665306 .productandvideo-video video{
+    border-radius: 0px;
+  }
+  .prvidsec1637589665306 .productandvideoimg{
+    border-radius: 0px;
+  }
+  @media (min-width: 769px){
+    .prvidsec1637589665306 .productandvideothumb .tt-title{
+      font-size: 22px;
+      line-height: 32px;
+    }
+    .prvidsec1637589665306 .productandvideothumb .tt-pr-small-desc{
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    .prvidsec1637589665306 .productandvideothumb .tt-price{
+      margin-top: 8px;
+      font-size: 22px;
+      line-height: 32px;
+    }
+    .prvidsec1637589665306 .productandvideothumb .tt-button-box{
+      margin-top: 17px;
+    }
+  }
+  .responsive-iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+  }
+
+  .responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+</div><div id='cartx-section-1637595778144' class='cartx-section index-section'><div class="container-indent sectionbigbanners1637595778144">
+  <div class="container-fluid">
+    <div class="row no-gutter"><div class="col-sm-12 respimgsize blid2"  id="section16375957781441">
+        
+          <a href="" class="tt-promo-fullwidth">
+            
+        	<img class="lazyload"
+                 data-mainimage="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_3164676362.jpg?auto=compress,format&w=1920&h=0"
+                 alt="">
+                 <div class="tt-description tt-point-h-l">
+            <div class="tt-description-wrapper text-left">
+              
+              
+              
+              
+            </div>
+          </div>
+        
+          </a>
+            
+        
+      </div></div>
+  </div>
+</div>
+<style>@media (min-width: 1024px){
+    div#cartx-section-1637595778144 div.blid2 a.btn {
+      min-height: 50px;
+      font-size: 12px;
+      padding: 0px;
+      height: 12px;
+    }
+  }</style>
+
+
+</div><div id='cartx-section-1637589887873' class='cartx-section index-section'><div class="tt-offset-small container-indent ">
+  
+  <div class="container-fluid-custom container-fluid-custom-mobile-padding" data-sectionname="index_sectionproducts"><div class="tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js" data-slick='{"slidesToShow": 3,"slidesToScroll": 3,"autoplay": 1,"autoplaySpeed": 7000,"responsive": [{"breakpoint": 600,"settings": {"slidesToShow": 2,"slidesToScroll": 1}}]}'><div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/jbl-k4-bluetooth-portatil"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/86/99/06/1637639072.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/86/99/06/1637639072.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/jbl-k4-bluetooth-portatil">Jbl K4 Bluetooth Portátil</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 229,00</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637589887873">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637589887873 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/kit-1-smart-watch-d20-1-pod-i12-bluetooth"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/20/18/0e/1637626093.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/20/18/0e/1637626093.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/kit-1-smart-watch-d20-1-pod-i12-bluetooth">Kit 1 Smart Watch D20 + 1 Pod I12 Bluetooth</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 189,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637589887873">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637589887873 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/case-de-ultimate-cover-a-prova-de-choque-luxuosa-para-iphone-11-12-pro-max"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/40/5d/2c/1637452911917.jpeg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/40/5d/2c/1637452911917.jpeg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/case-de-ultimate-cover-a-prova-de-choque-luxuosa-para-iphone-11-12-pro-max">Case de Ultimate  Cover a prova de choque, luxuosa, para Iphone 11, 12 pro, max,</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 89,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637589887873">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637589887873 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/mini-teclado-bluetooth-led"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/80/4e/52/1637452884215.jpeg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/80/4e/52/1637452884215.jpeg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/mini-teclado-bluetooth-led">mini teclado bluetooth led</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 59,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637589887873">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637589887873 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/besportble-1pc-laptop-stand-mesa-de-madeira-de-computador-de-riser-ergonomico-laptops-elevador-para-a-mesa-notebook-stan"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/6c/9d/f7/1637686837.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/6c/9d/f7/1637686837.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/besportble-1pc-laptop-stand-mesa-de-madeira-de-computador-de-riser-ergonomico-laptops-elevador-para-a-mesa-notebook-stan">Laptop Stand Mesa de Madeira de Computador De Riser Ergonômico Laptops Elevador para a Mesa Notebook Stan</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 139,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637589887873">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637589887873 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/celular-enfinity-32mb-duo-chip"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/33/d1/fe/1637452882157.jpeg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/33/d1/fe/1637452882157.jpeg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/celular-enfinity-32mb-duo-chip">celular enfinity 32mb duo chip</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 109,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637589887873">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637589887873 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      </div></div>
+  
+</div>
+<style type="text/css">
+  .tt-layout-product-item .tt-product .svg_admin {
+      height: auto !important;
+  }
+</style>
+
+
+</div><div id='cartx-section-1637594914785' class='cartx-section index-section'><div class="container-indent sectionbigbanners1637594914785">
+  <div class="container-fluid">
+    <div class="row no-gutter"><div class="col-sm-12 respimgsize blid1"  id="section16375949147851">
+        
+          <a href="" class="tt-promo-fullwidth">
+            
+        	<img class="lazyload"
+                 data-mainimage="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_9714637430.jpg?auto=compress,format&w=1920&h=0"
+                 alt="">
+                 <div class="tt-description tt-point-h-l">
+            <div class="tt-description-wrapper text-left">
+              
+              
+              
+              
+            </div>
+          </div>
+        
+          </a>
+            
+        
+      </div></div>
+  </div>
+</div>
+<style>@media (min-width: 1024px){
+    div#cartx-section-1637594914785 div.blid1 a.btn {
+      min-height: 50px;
+      font-size: 12px;
+      padding: 0px;
+      height: 12px;
+    }
+  }</style>
+
+
+</div><div id='cartx-section-1637730748926' class='cartx-section index-section'><div class="container-indent Linha esportivos">
+  
+  <div class="container container-fluid-custom-mobile-padding" data-sectionname="index_sectionproducts"><div class="tt-block-title">
+      <h2 class="tt-title"><a href="/collections/corpo" class="title-hover-underline" title="MOSTRAR TODOS"></a></h2>
+      
+      
+    </div><div class="tt-carousel-products-js row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js" data-slick='{"slidesToShow": 4,"slidesToScroll": 4,"autoplay": 0,"autoplaySpeed": 5000,"responsive": [{"breakpoint": 600,"settings": {"slidesToShow": 2,"slidesToScroll": 1}}]}'><div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/tonificador-muscular-verao-2021-empina-bumbum-gratis"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/85/8c/67/1637687267.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/85/8c/67/1637687267.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/tonificador-muscular-verao-2021-empina-bumbum-gratis">Tonificador Muscular Verão 2021 + Empina Bumbum Grátis!!!</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 239,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637730748926">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637730748926 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/cinta-modeladora-da-carol-nakamura-corretora-de-postura-dupla-compressao"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/d0/9e/02/1637452888808.jpeg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/d0/9e/02/1637452888808.jpeg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/cinta-modeladora-da-carol-nakamura-corretora-de-postura-dupla-compressao">cinta modeladora da carol nakamura ,corretora de postura dupla compressão.</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 89,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637730748926">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637730748926 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/muscle-stimulation-levanta-bumbum-eletrico-pump-up"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/bc/1d/46/1637452897838.jpeg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/bc/1d/46/1637452897838.jpeg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/muscle-stimulation-levanta-bumbum-eletrico-pump-up">muscle stimulation levanta bumbum elétrico pump up.</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 69,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637730748926">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637730748926 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/calca-legging-fuso-montaria-preta-em-cirre"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/be/01/66/1637684089.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/be/01/66/1637684089.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/calca-legging-fuso-montaria-preta-em-cirre">Calça Legging Fusô Montaria Preta em Cirrê</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 0,00</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637730748926">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637730748926 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/conjunto-preto-com-cropped-com-bojo-e-calca-punho-com-tule"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/50/fd/65/1637686955.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/50/fd/65/1637686955.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/conjunto-preto-com-cropped-com-bojo-e-calca-punho-com-tule">Conjunto Preto com Cropped com Bojo e Calça Punho com Tule</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 139,99</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637730748926">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637730748926 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      <div class="forsliders-margins">
+
+
+<div class="respimgsize tt-product product-parent options-js thumbprod-center">
+  <div class="tt-image-box">
+    <a href="/products/legging-sem-costura-levanta-bumbum"><span class="tt-img "><img class="lazyload"
+          src="https://imgix.cartpanda.com/static/products_images/yJkrxeqwABIu816CyP8AaP1kKEyOnv.jpg?auto=compress,format&w=300&h=0"
+               data-mainimageratio = ''
+               data-mainimage="https://imgix.cartpanda.com/static/products_images/yJkrxeqwABIu816CyP8AaP1kKEyOnv.jpg?auto=compress,format&w=500&h=0"
+             alt=""/></span><span class="tt-label-location"><span class="tt-label-new">Novo</span><span class="tt-label-sale" style="display: none;">Desconto de <span class="thumb_percent"></span></span></span>
+    </a></div>
+
+  <div class="tt-description">
+    
+
+    <h2 class="tt-title prod-thumb-title-color">
+      <a href="/products/legging-sem-costura-levanta-bumbum">Legging sem Costura levanta bumbum</a>
+    </h2><div class="thumbnail_small_description">
+      
+    </div>
+    
+
+    
+
+    <div class="tt-price">
+      
+      <span>R$ 9,00</span>
+      <span class="old-price hide"></span>
+      
+    </div>
+      <div class="product-price__price product-price__price-1637730748926">
+        
+        
+          
+          
+
+        <span class="product-price__sale-label product-price__sale-label-1637730748926 hide">products.product.on_sale</span>
+      </div><div class="description" style="display:none;"></div>
+    
+    </div>
+  <div class="tt-description onerowactions">
+  </div>
+</div></div>
+      </div></div>
+  
+</div>
+<style type="text/css">
+  .tt-layout-product-item .tt-product .svg_admin {
+      height: auto !important;
+  }
+</style>
+
+
+</div><div id='cartx-section-1637730593046' class='cartx-section index-section'><style type="text/css">
+  .button__container-main.hidden {
+    display: none;
+    height: 0;
+}
+  .image__container img {
+    max-width: 100%;
+}
+  .image__container {
+    margin-bottom: 12px;
+}
+.price__container {
+    margin-top: 8px;
+}
+  .text-bold {
+    font-weight: 700;
+  }
+  .text-italic{
+       font-style: italic;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .slick-slider-preview .slick-slide {
+    margin: 0 15px;
+  }
+  .slick-slider-preview .slick-list {
+      margin: 0 -15px;
+  }
+  .product-widgets-section .handpicked-widgets{
+    margin: 20px 0px;
+  }
+  .button__container-main {
+    height: 40px;
+}
+.button__container-main .button__container {
+    height: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    overflow: hidden;
+    text-align: center;
+}
+.product__container:hover .button__container {
+    height: 40px;
+}
+.preview-header {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.product-widgets-section [data-items="6"] .addtocart_btn,.product-widgets-section [data-items="5"] .addtocart_btn {
+        max-width: 100%;
+    font-size: 12px;
+}
+@media screen and (max-width: 767px) {
+  .product-widget-btn{
+    font-size: 8px;
+  }
+  .button__container-main .button__container {
+    height: auto;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"  />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"  />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" ></script>
+<div id="page_name" data-page="index"></div>
+<div class="container-fluid-custom">
+
+  <div id="handpicked_products" class="product-widgets-section">
+  </div>
+
+  <div id="best_sellers_products" class="product-widgets-section">
+
+  </div>
+
+  
+  <div id="recently_viewed_featured_product" class="product-widgets-section">
+
+  </div>
+
+   <div id="who_bought_also_bought" class="product-widgets-section">
+
+  </div>
+
+   <div id="cart_recommendations" class="product-widgets-section">
+
+  </div>
+
+  <div id="products_from_same_collections" class="product-widgets-section">
+
+  </div>
+</div>
+<script id="handPickedproducts" type="text/template">
+
+  <div class="handpicked-widgets">
+    <div style="font-size:{{ widget_header_size }};color:{{widget_header_color}}" class="header preview-header {{main_title_class}}" >{{widget_header_title}}</div>
+    <div class="slick-slider-preview" data-items="{{widget_max_product_per_slide}}">
+      {{#items}}
+        <div class="item">
+            <div class="product__container">
+               <div class="image__container">
+                  <a href="/products/{{ handle }}"><img src="{{image}}" alt="{{title}}"></a>
+               </div>
+               <div class="name {{ product_title_class }}" style="font-size:{{ widget_product_title_size }};color:{{widget_product_title_color}}">
+                 <a href="/products/{{ handle }}" style="font-size:{{ widget_product_title_size }};color:{{widget_product_title_color}}"> {{title}}</a>
+               </div>
+               <div class="price__container {{ price_class }}" >
+                  <div style="color:{{ widget_product_price_color }}!important;font-size:{{ widget_product_price_size }};" class="m-text17b product-price new-price {{price_class}}">{{price}}</div>
+                  {{#if compare_at_price }}
+                  <s style="font-size:{{ widget_product_price_size }};" class="m-text17a product-price new-price {{price_class}}">{{compare_at_price}}</s>
+                  {{/if}}
+               </div>
+               <div class="button__container-main {{ add_cart_btn_class }}">
+                  <div class="button__container">
+                    <form action="/cart/add" method="post">
+                        <input type="hidden" value="{{ csrf_token }}" name="_token">
+                      <input type="hidden" name="quantity" value="1">
+                      <input type="hidden" name="id" value="{{ first_variant }}">
+                     <button class="btn btn-addtocart addtocart_btn product-widget-btn" type="submit" name="add">
+                      
+                      
+                        <span class="icon icon-shopping_basket"></span> <span>ADICIONAR AO CARRINHO</span>
+                      
+                        
+                    </button>
+                  </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      {{/items}}
+    </div>
+  </div>
+
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    //console.log('3227902');
+    var template = $('#page_name').attr('data-page'),
+        cart_ids = '3227902';
+
+    var selectors = {
+      handpicked_template: '#handPickedproducts',
+      handpicked_container: '#handpicked_products',
+      bs_container : '#best_sellers_products',
+      sm_container : '#products_from_same_collections',
+      rc_container : '#recently_viewed_featured_product',
+      wb_container : '#who_bought_also_bought',
+      crc_container : '#cart_recommendations',
+    };
+
+
+    var product_id = '',
+        shop_id = '140910';
+      function addCommas(nStr) {
+          nStr += '';
+          x = nStr.split('.');
+          x1 = x[0];
+          if(typeof x[1] != undefined && x[1] != "" && x[1] != null) {
+              if(x[1].length == 1) {
+                  x2 = x.length >= 1 ? ',' + x[1]+'0' : '';
+              } else {
+                  x2 = x.length >= 1 ? ',' + x[1] : '';
+              }
+          } else {
+              x2 = x.length >= 1 ? ',00' : '';
+          }
+          var rgx = /(\d+)(\d{3})/;
+          while (rgx.test(x1)) {
+              x1 = x1.replace(rgx, '$1' + '.' + '$2');
+          }
+          var price = x1 + x2;
+          return price;
+      }
+    function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    function uniqueResult(list) {
+      var result = [];
+      $.each(list, function(i, e) {
+        if ($.inArray(e, result) == -1) result.push(e);
+      });
+      return result;
+    }
+
+    var recentViews = getCookie('recentViewsCartX');
+    
+    if(recentViews === undefined || recentViews == '' || recentViews == null  ){
+        var recentViews = [];
+        if(product_id != "" && product_id !== undefined)
+          recentViews.push(product_id);
+    }else{
+        var recentViews = $.parseJSON(recentViews);
+        if(product_id != "" && product_id !== undefined)
+          recentViews.push(product_id);
+    }
+
+    var unique = uniqueResult(recentViews);
+    setCookie('recentViewsCartX',JSON.stringify(unique),7);
+
+    function buildWidgethandlpicked(data,products,cdn_url){
+        if(template !== 'product'){
+          return false;
+        }
+        //console.log(JSON.stringify(products));
+
+        var source = $(selectors.handpicked_template).html();
+        var hand_template = Handlebars.compile(source);
+        var items = [];
+        var item = {};
+        var adata = {};
+        var main_title_class = '',
+            handpicked_header_size = data.handpicked_header_size,
+            handpicked_header_color = data.handpicked_header_color,
+            widget_header_title = data.widget_header_title,
+            widget_max_product_per_slide = data.widget_max_product_per_slide,
+            product_title_class = '',
+            price_class = '',
+            add_cart_btn_class = '',
+            widget_product_price_color = data.best_seller_price_color;
+
+        if(data.handpicked_header_text_bold == '1'){
+          main_title_class += ' text-bold ';
+        }
+        if(data.handpicked_header_text_italic == '1'){
+          main_title_class += ' text-italic ';
+        }
+        if(data.handpicked_header_text_underline == '1'){
+          main_title_class += ' text-underline ';
+        }
+        if(data.handpicked_header_alignment != undefined){
+          main_title_class += ' text-'+data.handpicked_header_alignment;
+        }
+
+        if(data.handpicked_product_title_text_bold == '1'){
+          product_title_class += ' text-bold ';
+        }
+        if(data.handpicked_product_title_text_italic == '1'){
+          product_title_class += ' text-italic ';
+        }
+        if(data.handpicked_product_title_text_underline == '1'){
+          product_title_class += ' text-underline ';
+        }
+        if(data.handpicked_product_title_alignment != undefined){
+          product_title_class += ' text-'+data.handpicked_product_title_alignment;
+        }
+
+
+        if(data.handpicked_product_price_text_bold == '1'){
+          price_class += ' text-bold ';
+        }
+        if(data.handpicked_product_price_text_italic == '1'){
+          price_class += ' text-italic ';
+        }
+        if(data.handpicked_product_price_text_underline == '1'){
+          price_class += ' text-underline ';
+        }
+        if(data.handpicked_product_price_alignment != undefined){
+          price_class += ' text-'+data.handpicked_product_price_alignment;
+        }
+
+
+
+        
+        if(data.handpicked_add_cart_btn == '0'){
+            add_cart_btn_class += "hidden";
+        }
+          
+        $.each(products,function(i,item){
+          var image = '';
+          if(item.images !== undefined){
+            if(item.images.length > 0){
+              image = cdn_url+item.images[0].src;
+            }
+          }
+
+          var compare_at_price = '',
+              price = "R$ " +  addCommas( parseFloat(item.variants[0].price).toFixed(2) );
+
+          if(item.variants[0].compare_at_price != undefined && item.variants[0].compare_at_price >item.variants[0].price ){
+              compare_at_price = "R$ " +  addCommas( parseFloat( item.variants[0].compare_at_price).toFixed(2) );
+          }
+
+          item = {
+              title:item.title,
+              image : image,
+              product_title_class : product_title_class,
+              price_class : price_class,
+              add_cart_btn_class:add_cart_btn_class,
+              widget_product_price_color:widget_product_price_color,
+              widget_product_price_size:data.handpicked_product_price_size,
+              widget_product_title_size:data.handpicked_product_title_size,
+              widget_product_title_color:data.handpicked_product_title_color,
+              price: price ,
+              compare_at_price: compare_at_price,
+              first_variant : item.variants[0].id,
+              handle:item.handle
+          };
+  
+          items.push(item);
+        })
+
+        adata = {
+            items: items,
+            main_title_class: main_title_class,
+            widget_header_color:handpicked_header_color,
+            widget_header_size:handpicked_header_size,
+            widget_header_title: widget_header_title,
+            widget_max_product_per_slide : widget_max_product_per_slide,
+          };
+
+          $(selectors.handpicked_container).append(hand_template(adata));
+
+          enableSlider(selectors.handpicked_container);
+
+    }
+
+    function enableSlider(selector){
+      var noi = parseInt($(selector).find('.slick-slider-preview').attr('data-items') );
+      console.log(noi)
+      if(isNaN(noi)){
+        noi = 4;
+      }
+     var slickSlider = $(selector).find('.slick-slider-preview').slick({
+            slidesToShow:noi,
+            slidesToScroll :noi,
+            responsive: [
+              {
+                breakpoint: 767,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              }
+            ]
+
+      })
+    }
+
+    function buildBestsellers(data,products,cdn_url,container){
+     // console.log(JSON.stringify(data));
+
+       var source = $(selectors.handpicked_template).html();
+        var hand_template = Handlebars.compile(source);
+        var items = [];
+        var item = {};
+        var adata = {};
+        var main_title_class = '',
+            handpicked_header_size = data.best_seller_header_size,
+            handpicked_header_color = data.best_seller_header_color,
+            widget_header_title = data.widget_header_title,
+            widget_max_product_per_slide = data.widget_max_product_per_slide,
+            product_title_class = '',
+            price_class = '',
+            add_cart_btn_class = '',
+            widget_product_price_color = data.best_seller_price_color;
+
+        if(data.best_seller_header_text_bold == '1'){
+          main_title_class += ' text-bold ';
+        }
+        if(data.best_seller_header_text_italic == '1'){
+          main_title_class += ' text-italic ';
+        }
+        if(data.best_seller_header_text_underline == '1'){
+          main_title_class += ' text-underline ';
+        }
+        if(data.best_seller_header_alignment != undefined){
+          main_title_class += ' text-'+data.best_seller_header_alignment;
+        }
+
+        if(data.best_seller_product_title_text_bold == '1'){
+          product_title_class += ' text-bold ';
+        }
+        if(data.best_seller_product_title_text_italic == '1'){
+          product_title_class += ' text-italic ';
+        }
+        if(data.best_seller_product_title_text_underline == '1'){
+          product_title_class += ' text-underline ';
+        }
+        if(data.best_seller_product_title_alignment != undefined){
+          product_title_class += ' text-'+data.best_seller_product_title_alignment;
+        }
+
+       // console.log(product_title_class)
+        if(data.best_seller_product_price_text_bold == '1'){
+          price_class += ' text-bold ';
+        }
+        if(data.best_seller_product_price_text_italic == '1'){
+          price_class += ' text-italic ';
+        }
+        if(data.best_seller_product_price_text_underline == '1'){
+          price_class += ' text-underline ';
+        }
+        if(data.best_seller_product_price_alignment != undefined){
+          price_class += ' text-'+data.best_seller_product_price_alignment;
+        }
+
+
+
+        
+        if(data.best_seller_add_cart_btn == '0'){
+            add_cart_btn_class += "hidden";
+        }
+          
+        $.each(products,function(i,item){
+          var image = '';
+          if(item.images !== undefined){
+            if(item.images.length > 0){
+              var src = item.images[0].src;
+              src = src.indexOf('/') == 0 ? src.substring(1) : src;
+              image = cdn_url+src;
+            }
+          }
+
+          var compare_at_price = '',
+              price = "R$ " +  addCommas( parseFloat(item.variants[0].price).toFixed(2) );
+
+          if(item.variants[0].compare_at_price != undefined && item.variants[0].compare_at_price >item.variants[0].price ){
+              compare_at_price = "R$ " +  addCommas( parseFloat( item.variants[0].compare_at_price).toFixed(2) );
+            
+          }
+
+
+          item = {
+              title:item.title,
+              image : image,
+              product_title_class : product_title_class,
+              price_class : price_class,
+              add_cart_btn_class:add_cart_btn_class,
+              widget_product_price_color:widget_product_price_color,
+              widget_product_price_size:data.best_seller_product_price_size,
+              widget_product_title_size:data.best_seller_product_title_size,
+              widget_product_title_color:data.best_seller_product_title_color,
+              price: price ,
+              compare_at_price: compare_at_price,
+              first_variant : item.variants[0].id,
+              handle:item.handle
+          };
+  
+          items.push(item);
+        })
+
+        adata = {
+            items: items,
+            main_title_class: main_title_class,
+            widget_header_color:handpicked_header_color,
+            widget_header_size:handpicked_header_size,
+            widget_header_title: widget_header_title,
+            widget_max_product_per_slide : widget_max_product_per_slide,
+          };
+
+          $(container).append(hand_template(adata));
+
+          enableSlider(container);
+
+
+    }
+
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+
+    //console.log(product_id+'  '+shop_id);
+    jQuery.ajax({
+      url: "/product-widget",
+      data: {product_id:product_id,template:template,shop_id:shop_id,collections:[],recent:recentViews,cart_items:cart_ids },
+      dataType: 'JSON',
+      type: 'POST',
+      success: function (data) {
+        //console.log(JSON.stringify(data))
+        var widgets = data.widgets,
+            cdn = data.cdn_url;
+        $.each(widgets,function(i,item){
+          if(item.widget === 'handpicked_widgets'){
+            if(item.products.length > 0){
+              buildWidgethandlpicked(item.settings,item.products,cdn);
+            }
+          }
+
+          if(item.widget === 'best_sellers_widgets'){
+            var container = selectors.bs_container;
+            if(item.products.length > 0){
+              buildBestsellers(item.settings,item.products,cdn,container);
+            }
+          }
+          if(item.widget === 'product_from_same_collection'){
+            var container = selectors.sm_container;
+            //console.log(container);
+            if(item.products.length > 0){
+              buildBestsellers(item.settings,item.products,cdn,container);
+            }
+          }
+          if(item.widget === 'recently_viewed_featured_product'){
+            var container = selectors.rc_container;
+            //console.log(item.products.length);
+            if(item.products.length > 0){
+              buildBestsellers(item.settings,item.products,cdn,container);
+            }
+          }
+          if(item.widget === 'who_bought_also_bought'){
+              var container = selectors.wb_container;
+              //console.log(item.products.length);
+              if(item.products.length > 0){
+                buildBestsellers(item.settings,item.products,cdn,container);  
+              }
+          }
+
+          if(item.widget === 'cart_recommendations'){
+            var container = selectors.crc_container;
+            if(item.products.length > 0){
+              buildBestsellers(item.settings,item.products,cdn,container);
+            }
+          }
+
+        })
+        
+      },
+      error: function () {
+
+      }
+  });
+
+
+  $(document).on('click','.product-widget-btn',function(e){
+    e.preventDefault()
+    var form = $(this).closest('form'),
+        formd = $(form).serialize();
+
+        jQuery.ajax({
+          url: "/cart/add",
+          data: formd,
+          dataType: 'JSON',
+          type: 'POST',
+          success: function (data) {
+            window.location.href="/cart";
+          }
+      });
+  });
+
+
+
+  });
+</script>
+
+</div>
+  </div><div id='cartx-section-footer' class='cartx-section '><footer class="nomargin"><div class="tt-footer-custom tt-color-scheme-04">
+  <div class="container">
+    <div class="tt-row">
+      
+      
+
+      <div class="col-sm-6 copygrid6"></div>
+      <div class="col-sm-6">
+  <div class="tt-col-item">
+    <ul class="tt-payment-list"><li>
+        <a href="#">
+          <img class="lazyload"
+               data-src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_6607937319.png?auto=compress,format&w=0&h=21"
+               data-srcset="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_6607937319.png?auto=compress,format&w=0&h=42 1x, https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_6607937319.png?auto=compress,format&w=0&h=82 2x"
+               alt=""
+               style="height:90px;">
+        </a>
+      </li><li>
+        <a href="#">
+          <img class="lazyload"
+               data-src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_2575763192.png?auto=compress,format&w=0&h=21"
+               data-srcset="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_2575763192.png?auto=compress,format&w=0&h=42 1x, https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_2575763192.png?auto=compress,format&w=0&h=82 2x"
+               alt=""
+               style="height:90px;">
+        </a>
+      </li><li>
+        <a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.tortugaworld.com.br%2Fwp-content%2Fuploads%2F2018%2F07%2F7-dias-garantia.png&imgrefurl=https%3A%2F%2Fwww.tortugaworld.com.br%2F7-dias-garantia%2F&tbnid=AgLpsCItyq8CMM&vet=12ahUKEwi755DBi7D0AhXgM7kGHXhDCZgQMygLegUIARDFAQ..i&docid=KzgCWC1N-Vn8dM&w=237&h=200&itg=1&q=selo%20de%20garantia%207%20dias&hl=pt-BR&ved=2ahUKEwi755DBi7D0AhXgM7kGHXhDCZgQMygLegUIARDFAQ">
+          <img class="lazyload"
+               data-src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_9735137762.png?auto=compress,format&w=0&h=21"
+               data-srcset="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_9735137762.png?auto=compress,format&w=0&h=42 1x, https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_9735137762.png?auto=compress,format&w=0&h=82 2x"
+               alt=""
+               style="height:90px;">
+        </a>
+      </li><li>
+        <a href="#">
+          <img class="lazyload"
+               data-src="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_3791692977.png?auto=compress,format&w=0&h=21"
+               data-srcset="https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_3791692977.png?auto=compress,format&w=0&h=42 1x, https://imgix.cartpanda.com/static/theme_images/5e/88/62/140910_3791692977.png?auto=compress,format&w=0&h=82 2x"
+               alt=""
+               style="height:90px;">
+        </a>
+      </li></ul>
+  </div>
+</div>
+        
+      
+
+    </div>
+  </div>
+</div>
+
+</footer>
+<style>
+  .pageindex footer{
+    margin-top: 0;
+  }
+
+</style>
+
+</div><a href="#" class="tt-back-to-top">DE VOLTA AO TOPO</a>
+  
+
+  <!-- modalAddToCart -->
+<div class="modal fade" id="modalAddToCartError" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-add-cart">
+          <i class="icon-h-10"></i>
+          <p class="error_message"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalAddToCartProduct" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+      </div>
+      <div class="modal-body">
+        <div class="tt-modal-addtocart mobile">
+          <div class="tt-modal-messages">
+            <i class="icon-f-68"></i> Adicionado ao carrinho com sucesso!
+          </div>
+          <a href="#" class="btn-link btn-close-popup">CONTINUE COMPRANDO</a>
+          <a href="/cart" class="btn-link">Ver carrinho</a>
+          
+          <a href="/checkout" class="btn-link">FINALIZAR A COMPRA</a>
+        </div>
+        <div class="tt-modal-addtocart desctope">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="tt-modal-messages">
+                <i class="icon-f-68"></i> Produto adicionado com sucesso ao seu carrinho de compras
+              </div>
+              
+            </div>
+            <div class="col-12 col-lg-6">
+              <a href="/cart" class="tt-cart-total" title="Ver carrinho">
+                Existem <span class="modal-total-quantity"></span> itens no seu carrinho
+                <div class="tt-total">
+                  TOTAL: <span class="tt-price full-total-js"></span>
+                </div>
+              </a>
+
+              <a href="#" class="btn btn-border btn-close-popup ttmodalbtn">CONTINUE COMPRANDO</a>
+              <a href="/cart" class="btn btn-border ttmodalbtn ttmodalbtn">Ver carrinho</a>
+              
+              <a href="/checkout" class="btn ttmodalbtn">FINALIZAR A COMPRA</a>
+            </div>
+          </div>
+        </div><div class="tt-modal-slider hide">
+          <hr>
+          <div class="tt-title">With this product also buy:</div>
+          <div class="tt-modal-slider-js header-menu-product arrow-location-03 row">
+          </div>
+        </div></div>
+    </div>
+  </div>
+</div><div id="custom-preloader">
+  <div class="custom-loader" style="display: none;">
+    <img width="32" height="32" alt="Page Loader" class="lazyload" data-src="//glowstore.oncartx.io/themes/void/assets/ajax-loader.gif">
+  </div>
+</div>
+
+  <script>
+    var theme = {
+      installment_string: 'X DE R$',
+      datepicker_regional: 'pt-BR'
+    },
+    shop_url = 'https://glowstore.oncartx.io',
+      money_format = 'R$ {{amount}}',
+        color_with_border = 'White' || 'empty',
+        colors_value = ',coat: #ff0000,yellow: #ffff00,black: #000000,blue: #0000ff,green: #00ff00,purple: #800080,silver: #c0c0c0,white: #ffffff,brown: #7b3f00,light-brown: #feb035,dark-turquoise: #23cddc,orange: #fe9001,tan: #eacea7,violet: #ee82ee,pink: #ffc0cb,grey: #808080,red: #ff0000,light blue: #add8e6,',
+      texture_obj = function(){return JSON.parse('{"":"//glowstore.oncartx.io/themes/void/assets/filter_color1.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color2.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color3.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color4.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color5.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color6.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color7.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color8.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color9.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color10.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color11.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color12.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color13.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color14.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color15.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color16.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color17.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color18.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color19.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color20.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color21.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color22.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color23.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color24.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color25.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color26.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color27.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color28.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color29.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color30.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color31.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color32.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color33.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color34.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color35.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color36.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color37.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color38.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color39.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color40.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color41.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color42.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color43.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color44.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color45.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color46.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color47.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color48.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color49.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color50.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color51.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color52.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color53.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color54.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color55.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color56.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color57.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color58.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color59.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color60.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color61.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color62.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color63.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color64.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color65.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color66.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color67.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color68.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color69.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color70.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color71.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color72.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color73.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color74.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color75.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color76.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color77.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color78.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color79.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color80.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color81.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color82.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color83.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color84.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color85.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color86.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color87.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color88.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color89.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color90.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color91.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color92.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color93.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color94.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color95.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color96.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color97.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color98.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color99.png","":"//glowstore.oncartx.io/themes/void/assets/filter_color100.png"}');
+    }
+    texture_obj = texture_obj();
+
+    var void_app = {
+      url: '',
+      loader_text: 'Be patient',
+      main_info: {
+        customerid: '',
+        iid: '',
+        shop: '',
+        domain: '{"id":148545,"shop_id":140910,"name":"glowstore.oncartx.io","status":"connected","is_primary":1,"created_at":"2021-11-23 16:45:32","updated_at":"2021-11-23 16:45:32","certificate_path":null,"certificate_expiry_date":null}',
+        lic: '',
+      }
+    };
+
+    var set_day = 'Dia',
+        set_hour = 'Hrs',
+        set_minute = 'Min',
+        set_second = 'Sec';
+
+    var addtocart_text = '<span class="icon icon-shopping_basket"></span> <span>ADICIONAR AO CARRINHO</span>',
+        unavailable_text = '<span>ESGOTADO</span>',
+        addedhtml_text = '<span class="icon icon-shopping_basket"></span> ADICIONADO',
+        errorhtml_text = '<span class="icon icon-shopping_basket"></span> LIMITE PRODUTOS',
+        preorderhtml_text = '<span class="icon icon-f-47"></span> <span>Esgotado</span>',
+        wait_text = '<span class="icon icon-shopping_basket"></span> ESPERAR',
+        b_close = 'Fechar',
+        b_back = 'Voltar',
+        seeallresults = 'See all results';
+    
+
+    var small_image = '//glowstore.oncartx.io/themes/void/assets/dummy.png';
+
+    var g_product_installments = '0';
+    var g_installments_fees = '{"1":0,"2":5.41,"3":6.78,"4":8.25,"5":9.66,"6":11.04,"7":12.25,"8":13.85,"9":15.44,"10":16.59,"11":18.19,"12":19.79}';
+
+  </script>
+  <script type='text/javascript'>
+        $(window).on('load',function() {
+            if($('.btn-addtocart').length > 0) {
+                $(".btn-addtocart").prop("disabled", false);
+            }
+        });
+    </script>
+    <link href='//glowstore.oncartx.io/themes/void/247866/0/140910/compiled/timer_all' type='text/css' rel='stylesheet' >
+  <link href='//glowstore.oncartx.io/themes/void/247866/0/140910/compiled/timer_new' type='text/css' rel='stylesheet' >
+  <link href='//glowstore.oncartx.io/themes/void/247866/140910/custom_css.css' type='text/css' rel='stylesheet' >
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script><script src="//glowstore.oncartx.io/themes/void/247866/140910/vendor.min.js" defer="defer"></script>
+
+<script src="//glowstore.oncartx.io/themes/void/247866/140910/skrollr.js" defer="defer"></script>
+
+<div class="revolution_included"></div>
+<script src="//glowstore.oncartx.io/themes/void/247866/140910/jquery.themepunch.revolution_full.min.js" defer="defer"></script>
+
+<div class="isotope_included"></div>
+<script src="//glowstore.oncartx.io/themes/void/247866/140910/isotope_full.pkgd.min.js" defer="defer"></script>
+
+<script src="//glowstore.oncartx.io/themes/void/247866/140910/jquery.magnific-popup.min.js" defer="defer"></script><script src="//glowstore.oncartx.io/themes/void/247866/140910/moment-momenttimezone.min.js" defer="defer"></script>
+
+<script src="//glowstore.oncartx.io/themes/void/247866/140910/jquery.countdown.min.js" defer="defer"></script>
+
+<script src="//glowstore.oncartx.io/themes/void/247866/140910/jquery.instagramFeed.min.js" defer="defer"></script>
+
+<script src="//glowstore.oncartx.io/themes/void/247866/140910/theme.js" defer="defer"></script>
+<script src="//glowstore.oncartx.io/js/vue.js"></script>
+<style type="text/css">
+
+
+.modal-newsletter .modal-backdrop{
+  
+  background: linear-gradient(0deg, rgba(201,40,254,0.97) 0%, rgba(43,14,128,0.97) 100%);
+}
+#Modalnewsletter .tt-background {
+  
+  background: #FFFFFF url("https://glowstore.oncartx.io/placeholders/image.svg") 0 0 no-repeat;
+  
+  background-size: 50% auto;
+}
+</style><!-- modal (ModalSubsribeGood) -->
+<div class="modal  fade"  id="ModalSubsribeGood" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xs">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+      </div>
+      <div class="modal-body">
+        <div class="tt-modal-subsribe-good">
+          <i class="icon-f-68"></i> <span>You have successfully subscribed!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function checkSubscribe(){
+    if(location.search.indexOf('customer_posted=true') == -1) return false;
+    $('.tt-modal-subsribe-good').find('span').html('You have successfully subscribed!');
+    $('#ModalSubsribeGood').modal('show');
+    setTimeout(function(){window.history.pushState("", "", location.pathname)}, 100);
+  }
+  function checkSended(){
+    if(location.search.indexOf('contact_posted=true') == -1) return false;
+    $('.tt-modal-subsribe-good').find('span').html("Thanks for contacting us. We'll get back to you as soon as possible.");
+    $('#ModalSubsribeGood').modal('show');
+    setTimeout(function(){window.history.pushState("", "", location.pathname)}, 100);
+  }  
+  window.addEventListener('DOMContentLoaded', function() {
+    checkSubscribe();
+    checkSended();
+  });
+</script><!-- Modal (ModalMessage) -->
+<div class="modal fade" id="ModalMessage" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true"  data-pause=1500>
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+      </div>
+      <div class="modal-body">
+        <div class="tt-login-wishlist">
+          <p>Please login and you will add product to your wishlist</p>
+          <div class="row-btn">
+            <a href="/account/login" class="btn btn-small ttmodalbtn">SIGN IN</a>
+            <a href="/account/register" class="btn btn-border btn-small ttmodalbtn">REGISTER</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div id='cartx-section-promo-fixed' class='cartx-section '>
+  
+<script>
+  function initPromoFixed(){
+    var $ttpromofixed = $(".tt-promo-fixed"),
+      $promofixeddata = $(".promofixeddata"),
+        $promofixedclose = $ttpromofixed.find(".tt-btn-close");
+    
+    if($('html').hasClass('touch-device') && $ttpromofixed.hasClass('hidden-mobile')) return false;
+  if($ttpromofixed.hasClass('hidden-mobile') && $(window).width < 1025) return false;
+    if($promofixeddata.length == 0) return false;
+    
+    setPromoFixedItem($ttpromofixed, $promofixeddata);
+  showPromoFixed($ttpromofixed, $ttpromofixed.data('start'));
+    
+  showPromoFixedNextMessage($ttpromofixed, $promofixeddata, $promofixedclose)
+
+    $promofixedclose.click(function(){
+      $ttpromofixed.addClass('nonevent').fadeTo(100, 0);
+    });
+  }
+  function showPromoFixedNextMessage($modal, $data, $close){
+    var nextmin = $modal.data('min'),
+        nextmax = $modal.data('max');
+  var i = getRndInteger(nextmin, nextmax);
+    setTimeout(function(){
+      $close.trigger('click');
+      setTimeout(function(){
+        setPromoFixedItem($modal, $data);
+        showPromoFixed($modal, 0);
+        showPromoFixedNextMessage($modal, $data, $close);
+      }, 100);
+    }, i);
+  }
+  function getPromoFixedCustomProductIndex($promofixeddata){
+    var min = 0,
+        max = $promofixeddata.children().length;
+    return getRndInteger(min, max);
+  }
+  function setPromoFixedItem($modal, $data){
+    var i = getPromoFixedCustomProductIndex($data)
+    var data = $data.children().eq(i);
+    $modal.find('.tt-img').find('a').attr('href', data.data('url')).find('img').attr('src', data.data('image')).attr('alt', data.data('alt'));
+    $modal.find('.pr_name').attr('href', data.data('url')).text(data.data('name'));
+    
+    var nummin = parseInt(data.data('min')),
+      nummax = parseInt(data.data('max')),
+      num = getRndInteger(nummin, nummax);
+    $modal.find('.tt-info-value').text(num);
+
+  if (typeof data.data('text') === typeof undefined) return false;
+    var str = data.data('text').split('||'),
+      i = getRndInteger(0, str.length-1);
+    $modal.find('.tt-info-text').text(str[i]);
+  }
+  function showPromoFixed($parent, delay){
+    setTimeout(function(){
+    $parent.removeClass('nonevent').fadeTo(300, 1);
+    }, delay);
+  }
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+  setTimeout(initPromoFixed, 300);
+</script></div>
+
+    <script src="//glowstore.oncartx.io/js/vue.js"></script>
+  
+    <script type='text/javascript' defer src="https://glowstore.oncartx.io/js/custom-options-advance.js"></script>
+  
+  
+  
+    
+    <script type="text/javascript">
+      $("input#pcart-term-conditions-checkbox").on('change', function() {
+        if ($('input#pcart-term-conditions-checkbox').is(':checked')) {
+          $('.tt-modal-addtocart a.ttmodalbtn').removeClass('disabled');
+        }else{
+          $('.tt-modal-addtocart a.ttmodalbtn').addClass('disabled');
+        }
+      });
+      $("#cart-term-conditions-checkbox").on('change', function() {
+        if ($('#cart-term-conditions-checkbox').is(':checked')) {
+          $('.tt-shopcart-box button').removeClass('disabled').prop('disabled', false);;
+        }else{
+          $('.tt-shopcart-box button').addClass('disabled').prop('disabled', true);;
+        }
+      });
+      function isIE() {
+        ua = navigator.userAgent;
+        /* MSIE used to detect old browsers and Trident used to newer ones*/
+        var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+
+        return is_ie;
+      }
+      if (isIE()){
+        $('.lazyload').each(function() {
+          var mainimage = $(this).data('mainimage');
+          $(this).attr('src', mainimage);
+        });
+      }
+    </script>
+
+  
+
+  <script type="text/javascript">
+      if (typeof fbPixelAPI === 'undefined') {
+          function fbPixelAPI(eventName, eventData, eventID, customer) {
+              var current_url = window.location.href;
+
+              if (customer === undefined || customer === null || customer === '') {
+                  customer = {};
+              }
+
+              let fbp = document.cookie.split(';').filter(c => c.includes('_fbp=')).map(c => c.split('_fbp=')[1]);
+              let fbc = document.cookie.split(';').filter(c => c.includes('_fbc=')).map(c => c.split('_fbc=')[1]);
+              fbp = (fbp.length && fbp[0]) || null;
+              fbc = (fbc.length && fbc[0]) || null;
+              if(!fbc && window.location.search.includes('fbclid=')){
+                  fbc = 'fb.1.'+ (+new Date()) +'.'+ window.location.search.split('fbclid=')[1];
+              }
+
+              jQuery.ajax({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  },
+                  type: "POST",
+                  url: '/fbpixelapi',
+                  data: {eventName: eventName, eventData: eventData, current_url: encodeURIComponent(current_url), fbp: fbp, fbc: fbc, event_id: eventID, customer: customer},
+                  cache: false,
+                  success: function(data) {},
+                  error: function(errorThrown) { console.error(errorThrown) }
+              });
+          }
+      }
+  </script>
+
+  
+</body>
+</html>
